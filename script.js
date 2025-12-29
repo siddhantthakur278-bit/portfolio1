@@ -4,6 +4,9 @@ const video3 = document.getElementById("projectVideo3");
 const hoverSign= document.querySelector(".hover-sign")
 const videoList = [video1, video2, video3];
 
+const sideBar=document.querySelector(".sidebar")
+const menu=document.querySelector(".menu-icon")
+
 videoList.forEach(function(video) {
     
     video.muted = true;
@@ -25,4 +28,14 @@ videoList.forEach(function(video) {
     });
 });
 
+menu.addEventListener("click",function(){
+    sideBar.classList.remove("close-sidebar")
+    sideBar.classList.add("open-sidebar");
+})
 
+const close=document.querySelector("cloe-icon")
+
+close.addEventListener("click",function(){
+    sideBar.classList.remove("open-sidebar")
+    sideBar.classList.add("close-sidebar")
+})
