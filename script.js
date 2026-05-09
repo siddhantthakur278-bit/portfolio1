@@ -40,3 +40,56 @@ if (closeBtn && sideBar) {
         sideBar.style.opacity = "0";
     });
 }
+
+// Theme Toggle Logic
+const themeToggle = document.getElementById("theme-toggle");
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme) {
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    if (currentTheme === "dark") {
+        const icon = themeToggle.querySelector("i");
+        if(icon) icon.classList.replace("bx-moon", "bx-sun");
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        let theme = document.documentElement.getAttribute("data-theme");
+        if (theme === "dark") {
+            document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+            const icon = themeToggle.querySelector("i");
+            if(icon) icon.classList.replace("bx-sun", "bx-moon");
+        } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+            const icon = themeToggle.querySelector("i");
+            if(icon) icon.classList.replace("bx-moon", "bx-sun");
+        }
+    });
+}
+
+// Scroll Logic
+const scrollProgress = document.querySelector(".scroll-progress");
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.pageYOffset / totalHeight) * 100;
+    if (scrollProgress) scrollProgress.style.width = `${progress}%`;
+
+    if (backToTop) {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add("show");
+        } else {
+            backToTop.classList.remove("show");
+        }
+    }
+});
+
+if (backToTop) {
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}

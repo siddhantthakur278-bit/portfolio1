@@ -10,6 +10,10 @@
     <link href='https://cdn.boxicons.com/3.0.6/fonts/brands/boxicons-brands.min.css' rel='stylesheet'> 
 </head>
 <body>
+    <div class="scroll-progress"></div>
+    <div class="back-to-top" id="backToTop">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
     <div class="container">
         <!-- Background video removed for Neumorphism -->
         <header>
@@ -31,7 +35,9 @@
                 <a href="https://codeforces.com/profile/siddhantthakur278"><img src="code-forces.svg" alt="code-forces"></a>
                 <!-- <a href="#"><i class='bxl  bx-twitter-x'></i></a> -->
                 <!-- <a href="#"><i class='bxl  bx-youtube'></i></a> -->
-            
+                <button id="theme-toggle" class="theme-btn">
+                    <i class='bx bx-moon'></i>
+                </button>
             </div>
             
             <div class="menu-icon"><i class='bxds  bx-menu'></i></div>
@@ -176,7 +182,7 @@
                                     <span class="timeline-date">2025 - 2029</span>
                                 </div>
                                 <p class="company">Ajeenkya DY Patil University</p>
-                                <p>CGPA: 8.23 / 10.0 | Focused on Computer Science and AI/ML fundamentals.</p>
+                                <p>CGPA: 9.13 / 10.0 | Focused on Computer Science and AI/ML fundamentals.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
@@ -206,7 +212,8 @@
         <section class="my-projects" id="project">
             <h1 class="section-title autoDisplay">My Projects 🧑🏻‍💻</h1>
             <div class="project-card">
-                <div class="project-vidbox">
+                <div class="project-vidbox autoBlur">
+                    <div class="hover-sign"></div>
                     <img src="agrioptima.png" alt="AgriOptima Dashboard">
                 </div>
                 <div class="project-info">
@@ -218,6 +225,7 @@
 
             <div class="project-card">
                 <div class="project-vidbox">
+                    <div class="hover-sign"></div>
                     <img src="agrioptima.png" alt="Modern Portfolio Website Screenshot">
                 </div>
                 <div class="project-info">
@@ -229,6 +237,7 @@
 
             <div class="project-card">
                 <div class="project-vidbox">
+                    <div class="hover-sign"></div>
                     <img src="sansaarpay.png" alt="SansaarPay App">
                 </div>  
                 <div class="project-info">
@@ -240,6 +249,7 @@
 
             <div class="project-card">
                 <div class="project-vidbox">
+                    <div class="hover-sign"></div>
                     <img src="movieverse.png" alt="Movie-Verse App">
                 </div>  
                 <div class="project-info">
@@ -251,6 +261,7 @@
 
             <div class="project-card">
                 <div class="project-vidbox">
+                    <div class="hover-sign"></div>
                     <img src="devpulse.png" alt="DevPulse Dashboard">
                 </div>  
                 <div class="project-info">
@@ -262,6 +273,7 @@
 
             <div class="project-card">
                 <div class="project-vidbox">
+                    <div class="hover-sign"></div>
                     <img src="prompttoolkit.png" alt="Prompt Engineering Toolkit">
                 </div>  
                 <div class="project-info">
@@ -273,6 +285,7 @@
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
+                    <div class="hover-sign"></div>
                     <img src="10.png" alt="ISS Tracker" style="width: 100%; border-radius: 20px; box-shadow:0 0 10px lightgray; object-fit: cover; aspect-ratio: 16/9;">
                 </div>  
                 <div class="project-info fadeInRight">
@@ -284,6 +297,7 @@
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
+                    <div class="hover-sign"></div>
                     <img src="12.png" alt="MathVerse" style="width: 100%; border-radius: 20px; box-shadow:0 0 10px lightgray; object-fit: cover; aspect-ratio: 16/9;">
                 </div>  
                 <div class="project-info fadeInRight">
@@ -309,7 +323,7 @@
                     <h1 class="gradient">Coder <i class='bxr  bx-code'></i></h1>
                     <p>I'm skilled in HTML,CSS,JavaScript and frmaeworks likeReact and  Node.js. I also have experience with database management using MOngoDB and MySQL.</p>
                 </div>
-                <div class="slider" reverse="true" style="--width: 100px;--height: 100px;--quantity: 9">
+                <div class="slider" reverse="true" style="--width: 100px;--height: 100px;--quantity: 14">
                     <div class="list">
                         <div class="item" style="--position: 1;"><img src="1.png" alt="slider image"></div>
                         <div class="item" style="--position: 2;"><img src="2.png" alt="slider image"></div>
