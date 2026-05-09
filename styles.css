@@ -418,7 +418,6 @@ header ul a:active, header ul a.active {
     font-size: 16px;
     line-height: 1.8; /* Slightly more breathing room for long text */
 }
-}
 /* Removed duplicated .project-info button and p styles, as they are now handled globally */
 .hover-sign{
     position: absolute;
