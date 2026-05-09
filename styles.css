@@ -210,7 +210,10 @@ margin-bottom: 30px ;
 }
 .hero-vid-box video{
     height: 990px;
-    mix-blend-mode: difference;
+    mix-blend-mode: screen;
+    opacity: 0.8;
+    mask-image: radial-gradient(circle, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
 }
 
 .scroll-down{
