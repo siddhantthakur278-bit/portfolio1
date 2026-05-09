@@ -82,8 +82,7 @@ header {
     background-color: var(--bg-base);
     padding: 0 40px;
     z-index: 999;
-    /* Optional: very subtle bottom shadow for the header itself */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-extruded-sm);
 }
 
 .scroll-progress {
@@ -1148,10 +1147,51 @@ footer h1 {
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 
-/* Magnetic Button Physics */
-.magnetic-btn {
-    display: inline-flex;
-    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+/* Custom Cursor Styles */
+.cursor-dot, .cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    transition: width 0.3s, height 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--accent);
+    opacity: 0.5;
+    box-shadow: var(--shadow-extruded-sm);
+}
+
+/* Cursor Hover State */
+.cursor-active {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent);
+    opacity: 0.15;
+    border: none;
+}
+
+@media (max-width: 1024px) {
+    .cursor-dot, .cursor-outline {
+        display: none;
+    }
+}
+
+/* 3D Tilt Prep */
+.project-card, .card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 

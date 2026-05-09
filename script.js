@@ -121,3 +121,52 @@ magneticBtns.forEach(btn => {
         btn.style.transform = `translate(0px, 0px)`;
     });
 });
+
+// Custom Cursor Logic
+const cursorDot = document.querySelector(".cursor-dot");
+const cursorOutline = document.querySelector(".cursor-outline");
+
+if (cursorDot && cursorOutline) {
+    window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Smooth outline movement
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+
+    // Cursor Hover Effects
+    const hoverTargets = document.querySelectorAll("a, button, .project-card, .card, .magnetic-btn, .theme-btn");
+    hoverTargets.forEach(target => {
+        target.addEventListener("mouseenter", () => cursorOutline.classList.add("cursor-active"));
+        target.addEventListener("mouseleave", () => cursorOutline.classList.remove("cursor-active"));
+    });
+}
+
+// 3D Tilt Logic
+const tiltElements = document.querySelectorAll(".project-card, .card");
+tiltElements.forEach(el => {
+    el.addEventListener("mousemove", (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+    
+    el.addEventListener("mouseleave", () => {
+        el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+    });
+});
