@@ -170,3 +170,19 @@ tiltElements.forEach(el => {
         el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
     });
 });
+
+// Intro Overlay Removal
+window.addEventListener('load', () => {
+    const intro = document.querySelector('.intro-overlay');
+    if (intro) {
+        // Wait for the loading animation to finish + a small buffer
+        setTimeout(() => {
+            intro.classList.add('fade-out');
+            // Remove from DOM after transition
+            setTimeout(() => {
+                intro.remove();
+            }, 800);
+        }, 2200);
+    }
+});
+
