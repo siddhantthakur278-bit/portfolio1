@@ -378,20 +378,19 @@ header ul a:active, header ul a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 35%; /* Reduced from 50% to make image smaller */
     position: relative;
     cursor: pointer;
     transition: 0.5s;
-    /* Recessed well for the image/video to sit inside */
     background-color: var(--bg-base);
     border-radius: 24px;
-    padding: 16px;
+    padding: 12px;
     box-shadow: var(--shadow-inset-deep);
 }
 
 .project-vidbox video,
 .project-vidbox img {
-    object-fit: cover;
+    object-fit: contain; /* Changed to contain to prevent stretching */
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
@@ -399,37 +398,30 @@ header ul a:active, header ul a.active {
     transition: all 300ms ease-out;
 }
 
-.project-vidbox video:hover,
-.project-vidbox img:hover {
-    transform: scale(1.02);
-}
-
 .project-info {
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    width: 50%;
-    padding-left: 24px;
+    width: 60%; /* Increased from 50% to give more room for long descriptions */
+    padding-left: 40px;
 }
 
 .project-info h1 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 800;
-    margin-bottom: 16px;
-    margin-top: 0;
+    margin-bottom: 20px;
     color: var(--text-primary);
     letter-spacing: -0.02em;
 }
 
 .project-info p {
     width: 100%;
-    max-width: 500px;
+    max-width: 650px; /* Increased max-width for longer descriptions */
     margin-bottom: 32px;
-    margin-top: 0;
     color: var(--text-muted);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.8; /* Slightly more breathing room for long text */
 }
 }
 /* Removed duplicated .project-info button and p styles, as they are now handled globally */
