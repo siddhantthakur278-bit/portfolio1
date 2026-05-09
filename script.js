@@ -93,3 +93,31 @@ if (backToTop) {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 }
+
+// Reveal on Scroll Logic (Intersection Observer)
+const revealElements = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active-reveal");
+        }
+    });
+}, { threshold: 0.1 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Magnetic Button Logic
+const magneticBtns = document.querySelectorAll(".magnetic-btn");
+magneticBtns.forEach(btn => {
+    btn.addEventListener("mousemove", (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+    });
+    
+    btn.addEventListener("mouseleave", () => {
+        btn.style.transform = `translate(0px, 0px)`;
+    });
+});

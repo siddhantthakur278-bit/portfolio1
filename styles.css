@@ -1130,8 +1130,28 @@ footer h1 {
     /* Disabled for Neumorphism */
 }
 
-@keyframes fadeInAnimation {
-    /* Disabled for Neumorphism */
+/* Reveal on Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+.reveal.active-reveal {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Delay Utilites */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Magnetic Button Physics */
+.magnetic-btn {
+    display: inline-flex;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 
