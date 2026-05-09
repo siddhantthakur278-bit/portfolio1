@@ -275,12 +275,7 @@ header ul a:active, header ul a.active {
     margin-top: 30px;
 
 }
-.card{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: relative;
-    width: auto;
+
 .card {
     height: 380px;
     width: 320px;
