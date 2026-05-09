@@ -156,18 +156,7 @@ header ul a:active, header ul a.active {
 }
 
 .blackhole-box{
-    position: absolute;
-    top: 0;
-    left: 17%;
-    width: 100%;
-    justify-content: center;
-    width: 100%;
-    margin-top: -16.5%;
-
-}
-
-.blackhole-box video{
-    mix-blend-mode: difference;
+    display: none; /* Removed for light mode Neumorphism */
 }
 
 .hero{
@@ -177,11 +166,6 @@ header ul a:active, header ul a.active {
     height: 100vh;
     align-items: center;
     justify-content: space-between;
-}
-
-.hero-info{
-    position: absolute;
-    left: 5%;
 }
 
 .hero-info {
@@ -753,8 +737,7 @@ footer h1 {
 }
 
 .autoBlur {
-    animation: autoBlurAnimation linear both;
-    animation-timeline: view();
+    /* Disabled for Neumorphism */
 }
 
 .menu-icon {
@@ -833,61 +816,23 @@ footer h1 {
 
 
 @keyframes autoBlurAnimation {
-    0%{
-       filter: blur(40px); 
-       opacity: 0;
-    }
-    35%,65%{
-        filter:blur(0);
-        opacity: 1;
-
-    }
-    100%{
-       filter: blur(40px);
-       opacity:0 ; 
-    }
-
+    /* Disabled for Neumorphism */
 }
 
-.autoDisplay{
-    animation: autoDisplayAnimation both;
-    animation-timeline:view() ;
+.autoDisplay {
+    /* Disabled for Neumorphism */
 }
 
 @keyframes autoDisplayAnimation {
-    from{
-        filter: blur(10px);
-        transform: translateY(-200px) scale(0);
-        opacity: 0.2;
-    }
-    50%{
-        opacity: 1;
-        filter: blur(0);
-        transform: translateX(0) scale(1);
-    }
+    /* Disabled for Neumorphism */
 }
 
-
-.fadeInRight{
-    animation: fadeInAnimation both;
-    animation-timeline: view();
-
+.fadeInRight {
+    /* Disabled for Neumorphism */
 }
 
 @keyframes fadeInAnimation {
-    0%{
-        opacity:0;
-        transform: translateX(-500px) scale(0.2);
-        filter: blur(20px);
-    }
-    35%,65%{
-        opacity: 1;
-        transform: translateX(0px) scale(1);
-        filter: blur(0);
-    }
-    100%{
-        filter: blur(20px);
-    }
+    /* Disabled for Neumorphism */
 }
 
 
@@ -1003,8 +948,8 @@ footer h1 {
         flex-direction: column;
     }
 
-    .autoBlur{
-        animation: none;
+    .autoBlur {
+        /* Disabled */
     }
 .hero-info{
     bottom: 5%;
