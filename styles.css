@@ -648,36 +648,39 @@ header ul a:active, header ul a.active {
 
 
 
-/* Projects Section Refactor */
+/* Projects Section — CSS Grid Layout */
 .my-projects {
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
     position: relative;
     width: 100%;
-    max-width: 1280px; /* Tailwind 7xl */
+    max-width: 1280px;
     margin: 100px auto 200px auto;
     padding: 0 24px;
+    /* section-title sits outside the grid via its own block */
+}
+
+/* section-title spans full width */
+.my-projects > .section-title {
+    grid-column: 1 / -1;
 }
 
 .project-card {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    min-height: 400px;
     height: auto;
-    align-items: center;
-    gap: 48px;
-    justify-content: center;
+    gap: 24px;
     background-color: var(--bg-base);
-    padding: 40px;
+    padding: 28px;
     border-radius: 32px;
     box-shadow: var(--shadow-extruded);
     transition: all 300ms ease-out;
 }
 
 .project-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-extruded-hover);
 }
 
@@ -685,19 +688,19 @@ header ul a:active, header ul a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35%; /* Reduced from 50% to make image smaller */
+    width: 100%;
     position: relative;
     cursor: pointer;
     transition: 0.5s;
     background-color: var(--bg-base);
-    border-radius: 24px;
-    padding: 12px;
+    border-radius: 20px;
+    padding: 10px;
     box-shadow: var(--shadow-inset-deep);
 }
 
 .project-vidbox video,
 .project-vidbox img {
-    object-fit: contain; /* Changed to contain to prevent stretching */
+    object-fit: cover;
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
@@ -709,26 +712,25 @@ header ul a:active, header ul a.active {
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
-    width: 60%; /* Increased from 50% to give more room for long descriptions */
-    padding-left: 40px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 8px;
 }
 
 .project-info h1 {
-    font-size: 32px;
+    font-size: 22px;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     color: var(--text-primary);
     letter-spacing: -0.02em;
 }
 
 .project-info p {
     width: 100%;
-    max-width: 650px; /* Increased max-width for longer descriptions */
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     color: var(--text-muted);
-    font-size: 16px;
-    line-height: 1.8; /* Slightly more breathing room for long text */
+    font-size: 14px;
+    line-height: 1.7;
 }
 /* Removed duplicated .project-info button and p styles, as they are now handled globally */
 .hover-sign{
@@ -1253,32 +1255,35 @@ footer h1 {
         margin-top: 5%;
     }
 
-    .my-projects{
-        margin-bottom: 300px;
+    .my-projects {
+        grid-template-columns: 1fr;
+        margin-bottom: 100px;
+        gap: 28px;
     }
 
-    .project-vidbox video{
-        width: 250px;
-        margin-left: -100px;
+    .project-vidbox video,
+    .project-vidbox img {
+        width: 100%;
+        margin-left: 0;
     }
-    .project-info{
-        padding-left: 0;
-        margin-left: -50px;
+
+    .project-info {
+        padding: 0;
+        margin-left: 0;
     }
-    .project-info h1{
+
+    .project-info h1 {
+        font-size: 18px;
+        text-wrap: wrap;
+    }
+
+    .project-info p {
+        font-size: 13px;
+        text-wrap: wrap;
+    }
+
+    footer h1 {
         font-size: 20px;
-        max-width: 200px;
-        text-wrap: wrap;
-    }
-
-    .project-info p{
-        font-size: 10px;
-        text-wrap: wrap;
-        max-width: 200px;
-        min-width: 0;
-    }
-    footer h1{
-      font-size: 20px;  
     }
 }
 
@@ -1331,27 +1336,30 @@ footer h1 {
     width: 100%;
 }
 
-.my-projects{
-    margin-bottom: 600px;
-
+.my-projects {
+    grid-template-columns: 1fr;
+    margin-bottom: 100px;
+    gap: 24px;
+    padding: 0 16px;
 }
 
-.project-card{
-    flex-direction: column;
-    margin-left: 25%;
-    gap: 30px;
+.project-card {
+    margin-left: 0;
+    padding: 20px;
 }
 
-.project-info{
-    width: 85%;
+.project-info {
+    width: 100%;
 }
 
-.project-info h1{
-    text-wrap: nowrap;
+.project-info h1 {
+    font-size: 18px;
+    text-wrap: wrap;
 }
 
-.project-info p{
-    max-width: 300px;
+.project-info p {
+    max-width: 100%;
+    font-size: 13px;
 }
 
 .designer{
